@@ -69,8 +69,11 @@ $persons= [
     ]
 ];
 
-foreach ( $persons as $key )
+$i = 0;
+while ($i < count($persons))
 {
-    echo $key[0][0];
-}
+    echo "{$persons[$i]['name']} {$persons[$i]['surname']} ".PHP_EOL;
+    
 
+}
+echo count($persons);
