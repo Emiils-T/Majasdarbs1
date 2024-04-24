@@ -72,8 +72,27 @@ $persons= [
 $i = 0;
 while ($i < count($persons))
 {
-    echo "{$persons[$i]['name']} {$persons[$i]['surname']} ".PHP_EOL;
-    
+    echo "{$persons[$i]['name']} {$persons[$i]['surname']} {$persons[$i]['age']} : {$persons[$i]['birthday']} ".PHP_EOL;
+    $i++;
 
 }
-echo count($persons);
+
+echo PHP_EOL;
+
+foreach ($persons as $b)
+{
+    foreach ($b as $c)
+    {
+        echo $c." ";
+    }
+    echo PHP_EOL;
+
+}
+ echo PHP_EOL;
+
+for ($i = 0; $i < count($persons) ; $i++ )
+{
+    echo $persons[$i]['name'].' '.$persons[$i]['surname'].' '.$persons[$i]['age'].' | '.$persons[$i]['birthday'].PHP_EOL;
+}
+
+
