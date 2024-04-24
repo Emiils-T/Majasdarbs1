@@ -3,7 +3,7 @@
 //Create a non-associative array with 3 integer values and display the total sum of them.
 
 $arraySum = [10,30,40];
-echo array_sum($arraySum).PHP_EOL;
+echo array_sum($arraySum) . PHP_EOL;
 
 //Exercise 2
 //Given array
@@ -16,7 +16,7 @@ $person1 = [
     "age" => 50
 ];
 
-var_dump($person1).PHP_EOL;
+var_dump($person1) . PHP_EOL;
 
 //Exercise 3
 //Given object
@@ -29,7 +29,7 @@ $person2->surname = "Doe";
 $person2->age = 50;
 
 
-var_dump($person2).PHP_EOL;
+var_dump($person2) . PHP_EOL;
 
 
 //Given array
