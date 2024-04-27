@@ -88,7 +88,7 @@ foreach ($persons as $b)
     echo PHP_EOL;
 
 }
- echo PHP_EOL;
+ echo  PHP_EOL;
 
 for ($i = 0; $i < count($persons) ; $i++ )
 {
