@@ -101,27 +101,55 @@ $fruits = [
 ];
 
 
-
-function shippingCostCalculator(array $array):string
+function shippingCostCalculator(array $array): string
 {
-    $shipping= ['under10kg'=>1, 'over10kg'=>2];
-    $messageArray=[];
+    $shipping = ['under10kg' => 1, 'over10kg' => 2];
+    $messageArray = [];
     foreach ($array as $fruit) {
         if ($fruit['weight'] >= 10) {
-            $message1= "{$fruit['name']}.{$fruit['weight']}.{$shipping['over10kg']}";
-            $messageArray[]=$message1;
+            $message1 = "{$fruit['name']} weight:{$fruit['weight']} shipping cost:{$shipping['over10kg']}";
+            $messageArray[] = $message1;
         }
         if ($fruit['weight'] < 10) {
-             $message2= "{$fruit['name']}.{$fruit['weight']}.{$shipping['under10kg']}";
-             $messageArray[] = $message2;
+            $message2 = "{$fruit['name']} weight:{$fruit['weight']} shipping cost:{$shipping['under10kg']}";
+            $messageArray[] = $message2;
         }
     }
     return implode(PHP_EOL, $messageArray);
 
 }
-echo shippingCostCalculator($fruits);
+
+echo shippingCostCalculator($fruits) . PHP_EOL;
+
+/*Exercise 6
+Create an non-associative array with 5 elements where 3 are integers, 1 float and 1 string.
+Create a for loop that iterates non-associative array using php in-built function that determines count of elements in the array.
+Create a function that doubles the integer number.
+Within the loop using php in-built function print out the double of the number value (using your custom function).*/
 
 
+$arrayOfValues = [
+    3,
+    5,
+    7,
+    10.10,
+    'codelex'
+];
 
+function doubleInteger($value): int
+{
+    $val = 0;
+    if (is_int($value)) {
+        $val = $value * 2;
+    }
+    return $val;
+}
 
+;
+
+for ($i = 0; $i < count($arrayOfValues); $i++) {
+    if (is_int($arrayOfValues[$i])) {
+        echo doubleInteger($arrayOfValues[$i]) . PHP_EOL;
+    }
+}
 
