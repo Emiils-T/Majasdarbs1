@@ -28,7 +28,7 @@ switch ($userChoice) {
     case 1:
         $circleRadius = readline('Enter circle radius: ');
         $circleArea = pi() * $circleRadius * 2;
-        if (!is_numeric($circleRadius)) {
+        if ($circleRadius<=0) {
             echo 'Error: Enter a positive number.' . PHP_EOL;
             exit;
         } else {
@@ -38,12 +38,12 @@ switch ($userChoice) {
 
     case 2:
         $rectangleLength = readline('Enter rectangle length: ' . PHP_EOL);
-        if (!is_numeric($rectangleLength)) {
+        if ($rectangleLength <= 0) {
             echo 'Error: Enter a positive number.' . PHP_EOL;
             exit;
         }
         $rectangleWidth = readline('Enter rectangle width: ' . PHP_EOL);
-        if (!is_numeric($rectangleWidth)) {
+        if ($rectangleWidth<=0) {
             echo 'Error: Enter a positive number.' . PHP_EOL;
             exit;
         }
@@ -52,12 +52,12 @@ switch ($userChoice) {
         break;
     case 3:
         $triangleBase = readline('Enter triangle base: ');
-        if (!is_numeric($triangleBase)) {
+        if ($triangleBase<=0) {
             echo 'Error: Enter a positive number.' . PHP_EOL;
             exit;
         }
         $triangleHeight = readline('Enter triangle height: ');
-        if (!is_numeric($triangleHeight)) {
+        if ($triangleHeight<=0) {
             echo 'Error: Enter a positive number.' . PHP_EOL;
             exit;
         }
