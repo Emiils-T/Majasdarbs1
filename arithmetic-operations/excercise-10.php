@@ -18,45 +18,51 @@ echo "3. Calculate the Area of a Triangle\n";
 echo "4. Quit\n\n";
 
 
-$userChoice=(int) readline("Enter your choice (1-4) : ");
-if($userChoice<=0 || $userChoice>4){
-    echo 'Error: Select valid choice'.PHP_EOL;
+$userChoice = (int)readline("Enter your choice (1-4) : ");
+if ($userChoice <= 0 || $userChoice > 4) {
+    echo 'Error: Enter number from 1-4' . PHP_EOL;
     exit;
 }
+switch ($userChoice) {
 
-$circleRadius= (int) readline('Enter circle radius: ');
-$circleArea= pi()*$circleRadius *2;
-if($circleRadius<=0){
-    echo 'Error: Circle radius cannot be less than or equal to zero.'.PHP_EOL;
-    exit;
-}else {
-    echo $circleArea.PHP_EOL;
+    case 1:
+        $circleRadius = readline('Enter circle radius: ');
+        $circleArea = pi() * $circleRadius * 2;
+        if (!is_numeric($circleRadius)) {
+            echo 'Error: Enter a positive number.' . PHP_EOL;
+            exit;
+        } else {
+            echo $circleArea . PHP_EOL;
+            break;
+        }
+
+    case 2:
+        $rectangleLength = readline('Enter rectangle length: ' . PHP_EOL);
+        if (!is_numeric($rectangleLength)) {
+            echo 'Error: Enter a positive number.' . PHP_EOL;
+            exit;
+        }
+        $rectangleWidth = readline('Enter rectangle width: ' . PHP_EOL);
+        if (!is_numeric($rectangleWidth)) {
+            echo 'Error: Enter a positive number.' . PHP_EOL;
+            exit;
+        }
+        echo $rectangleArea = $rectangleLength * $rectangleWidth . PHP_EOL;
+
+        break;
+    case 3:
+        $triangleBase = readline('Enter triangle base: ');
+        if (!is_numeric($triangleBase)) {
+            echo 'Error: Enter a positive number.' . PHP_EOL;
+            exit;
+        }
+        $triangleHeight = readline('Enter triangle height: ');
+        if (!is_numeric($triangleHeight)) {
+            echo 'Error: Enter a positive number.' . PHP_EOL;
+            exit;
+        }
+        echo $triangleArea = $triangleBase * $triangleHeight * 0.5 . PHP_EOL;
+        break;
+    case 4:
+        exit;
 }
-
-$rectangleLength= (int) readline('Enter rectangle length: '.PHP_EOL);
-$rectangleWidth= (int) readline('Enter rectangle width: '.PHP_EOL);
-
-$rectangleArea= $rectangleLength * $rectangleWidth;
-
-if($rectangleWidth<=0 || $rectangleLength <=0){
-    echo 'Error: rectangle width or length cannot be less than or equal to zero.'.PHP_EOL;
-    exit;
-}else{
-    echo $rectangleArea.PHP_EOL;
-}
-
-$triangleBase = (int) readline('Enter triangle base: ');
-$triangleHeight = (int) readline('Enter triangle height: ');
-
-if($triangleBase<=0 || $triangleHeight <=0){
-    echo 'Error: triangle height or width cannot be less than or equal to zero.'.PHP_EOL;
-    exit;
-}else {
-   echo $triangleArea = $triangleBase * $triangleHeight * 0.5.PHP_EOL;
-}
-
-
-
-
-
-
