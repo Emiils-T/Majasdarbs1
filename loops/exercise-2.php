@@ -1,9 +1,9 @@
 <?php
 echo "Input number of terms: ";
-$input=10;
-$result=0;
+$input = 10;
+$result = 0;
 for ($i = 0; $i < $input; $i++) {
-     $result+=$input*$input;
+    $result += $input * $input;
 }
 echo $result;
 
