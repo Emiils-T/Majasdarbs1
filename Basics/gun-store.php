@@ -46,15 +46,19 @@ $guns = [
 ];
 function canPersonBuy($personArray, $gunName, $gunArray)
 {
-    $selectedGun = '';
+    $selectedGun = null;
     foreach ($gunArray as $gunItem) {
         if ($gunItem['name'] === $gunName) {
             $selectedGun = $gunItem;
             break;
         }
     }
+    if ($selectedGun == null) {
+        exit('Gun not found');
+    }
 
-    if (in_array($selectedGun['licenseLetter'], $personArray['license']) && $personArray['wallet'] >= $selectedGun['price']) {
+    if (in_array($selectedGun['licenseLetter'], $personArray['license']) &&
+        $personArray['wallet'] >= $selectedGun['price']) {
         echo "{$personArray['name']} can buy {$selectedGun['name']}." . PHP_EOL;
     } else {
         echo "{$personArray['name']} cannot buy {$selectedGun['name']}." . PHP_EOL;
@@ -62,4 +66,4 @@ function canPersonBuy($personArray, $gunName, $gunArray)
 
 }
 
-canPersonBuy($person1, 'mini-gun', $guns);
+canPersonBuy($person1, 'm4', $guns);

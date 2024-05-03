@@ -17,6 +17,8 @@ And the figure below has a size of 7:
 
 
 $levels = 7;
+
+
 $totalWidth = $levels;
 $totalWidth = ($totalWidth * 4) - 4;
 $leftCharacter = '/';
